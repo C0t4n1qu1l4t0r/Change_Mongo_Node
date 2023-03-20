@@ -1,19 +1,19 @@
 'use strict'
+var User = require('../models/User');
 
-var User = require('../models/user');
-
-//routes
-function home(req,res){
+function home(req, res) {
     res.status(200).send({
         message: 'Hello World!'
     });
 }
-function pruebas (req,res){
+
+function pruebas(req, res) {
     console.log(req.body);
     res.status(200).send({
-        message: 'Test  action'
+        message: 'Pruebas!'
     });
-}    
-module.exports = (
+}
+
+module.exports = {
     home,pruebas
-)
+}

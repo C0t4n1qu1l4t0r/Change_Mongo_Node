@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var user_routes = require('./routes/user');
 //load routes
 /*
 var user_routes = require('./routes/user');
@@ -22,8 +23,7 @@ res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
 next();
 });
 //routes
-//app.use('/api', user_routes); //middleware para reescribir las routes
-//api/home /api/pruebas
+app.use('/api', user_routes);
 //app.use('/api', peticion_routes); //middleware para reescribir las routes
 //api/home /api/pruebas
 //app.use('/api', firma_routes); //middleware para reescribir las routes
