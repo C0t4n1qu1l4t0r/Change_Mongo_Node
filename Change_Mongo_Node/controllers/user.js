@@ -1,8 +1,11 @@
 "use strict";
-var User = require("../models/User");
-var jwt = require("../services/jwt");
+const User = require("../models/User");
+const jwt = require("../services/jwt");
+const bcrypt = require('bcrypt');
+const paginate = require('mongoose-paginate')
 
 function home(req, res) {
+  console.log(req.body)
   res.status(200).send({
     message: "Hello World!",
   });
@@ -161,6 +164,8 @@ function updateUser(req, res) {
   var update = req.body; //all the object with the information I want toupdate, except from pw
   //delete the pw property
   delete update.password;
+  console.log(update);
+
   User.findByIdAndUpdate(
     userId,
     update,

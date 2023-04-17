@@ -13,7 +13,7 @@ api.post('/register', UserController.saveUser);
 api.get('/users/:page?', md_auth.ensureAuth, UserController.getUsers);
 api.get('/me', md_auth.ensureAuth, UserController.getUser);
 api.post('/login', UserController.login);
-api.put('/user/:id/:update', md_auth.ensureAuth, UserController.updateUser);
-api.delete('/user/:id', md_auth.ensure, AuthController.deleteUser);
+api.put('/user/', md_auth.ensureAuth, UserController.updateUser);
+api.delete('/user/:id', md_auth.ensureAuth, UserController.deleteUser);
 
 module.exports = api;

@@ -12,7 +12,7 @@ exports.ensureAuth = function (req, res, next) {
   }
 
   var bearerHeader = req.headers.authorization.replace("/['\"]+/g", "");
-  var parts = bearerHeader.split("");
+  var parts = bearerHeader.split(" ");
   if (parts.length === 2) {
     var scheme = parts[0];
     var credentials = parts[1];
